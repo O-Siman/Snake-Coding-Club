@@ -63,40 +63,41 @@ public class Main extends PApplet {
 
     public static void gameloop() {
         //If we have no controls in queue
-        
-
-        switch (controlQueue.get(0)) {
-            case UP: {
-                if (pdY == 1)
-                    return;
-                pdY = -1;
-                pdX = 0;
-                controlQueue.remove(0);
-                break;
-            }
-            case DOWN: {
-                if (pdY == -1)
-                    return;
-                pdY = 1;
-                pdX = 0;
-                controlQueue.remove(0);
-                break;
-            }
-            case LEFT: {
-                if (pdX == 1)
-                    return;
-                pdX = -1;
-                pdY = 0;
-                controlQueue.remove(0);
-                break;
-            }
-            case RIGHT: {
-                if (pdX == -1)
-                    return;
-                pdX = 1;
-                pdY = 0;
-                controlQueue.remove(0);
-                break;
+        if (!(controlQueue.size() < 1)) {
+            //Queue controls
+            switch (controlQueue.get(0)) {
+                case UP: {
+                    if (pdY == 1)
+                        return;
+                    pdY = -1;
+                    pdX = 0;
+                    controlQueue.remove(0);
+                    break;
+                }
+                case DOWN: {
+                    if (pdY == -1)
+                        return;
+                    pdY = 1;
+                    pdX = 0;
+                    controlQueue.remove(0);
+                    break;
+                }
+                case LEFT: {
+                    if (pdX == 1)
+                        return;
+                    pdX = -1;
+                    pdY = 0;
+                    controlQueue.remove(0);
+                    break;
+                }
+                case RIGHT: {
+                    if (pdX == -1)
+                        return;
+                    pdX = 1;
+                    pdY = 0;
+                    controlQueue.remove(0);
+                    break;
+                }
             }
         }
 
